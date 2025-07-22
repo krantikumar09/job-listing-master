@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+:root {
+  --primary-green: hsl(180, 29%, 50%);
+  --gray-400: hsl(180, 8%, 52%);
+  --green-900: hsl(180, 14%, 20%);
+  --bg-color: hsl(180, 52%, 96%);
+}
+
+body {
+  font-size: 15px;
+  font-weight: 400;
+  background-color: var(--bg-color);
+}
+
+.hero {
+  width: 100%;
+  height: 150px;
+  background-image: url("../images/bg-header-desktop.svg");
+  background-color: var(--primary-green);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    background-image: url("../images/bg-header-mobile.svg");
+  }
+}
+
+.job-container {
+  max-width: 1024px;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 30px;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.search-bar {
+  width: 100%;
+  min-height: 60px;
+  padding: 12px 26px;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-shadow: -2px 25px 72px -42px rgba(128, 128, 128, 0.75);
+  -webkit-box-shadow: -2px 25px 72px -42px rgba(128, 128, 128, 0.75);
+  -moz-box-shadow: -2px 25px 72px -42px rgba(128, 128, 128, 0.75);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+.filter-tags {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tag-pill {
+  display: flex;
+  align-items: center;
+  background: #eef6f6;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--primary-green);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.tag-pill .remove-tag {
+  margin-left: 8px;
+  cursor: pointer;
+  color: #888;
+  border-radius: 0 5px 5px 0;
+  -webkit-border-radius: 0 5px 5px 0;
+  -moz-border-radius: 0 5px 5px 0;
+  -ms-border-radius: 0 5px 5px 0;
+  -o-border-radius: 0 5px 5px 0;
+}
+
+.btn {
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-400);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: text 0.2 ease;
+  -webkit-transition: text 0.2 ease;
+  -moz-transition: text 0.2 ease;
+  -ms-transition: text 0.2 ease;
+  -o-transition: text 0.2 ease;
+}
+
+.btn:hover {
+  color: var(--primary-green);
+  text-decoration: underline;
+}
+
+.job-wrapper {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.job-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  border-radius: 4px;
+  background-color: white;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.job-card.featured-card {
+    border-left: 5px solid var(--primary-green);
+}
+
+.job-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.company-logo {
+  max-width: 70px;
+  width: 100%;
+  height: 70px;
+}
+
+.company-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.company-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+.tag {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  -ms-border-radius: 999px;
+  -o-border-radius: 999px;
+  /* line-height: 16px; */
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+}
+
+.tag.active {
+  display: flex;
+}
+
+.new-tag {
+  background-color: var(--primary-green);
+}
+
+.feature-tag {
+  background-color: var(--green-900);
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 10px;
+}
+
+.job-details {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--gray-400);
+}
+
+.job-details .dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-bottom: 2px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: var(--gray-400);
+}
+
+.job-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cat-tag {
+  display: inline-block;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-green);
+  background-color: hsl(180, 29%, 50%, 0.1);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+}
+
+.cat-tag:hover {
+  background-color: var(--primary-green);
+  color: white;
+}
+
+.line {
+  display: none;
+}
+.attribution {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.attribution a {
+    color: blue;
+}
+
+@media only screen and (max-width: 789px) {
+  .job-wrapper {
+    margin-top: 56px;
+  }
+  .job-card {
+    margin-top: 28px;
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+  }
+
+  .job-left {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .company-logo {
+    position: absolute;
+    top: -24px;
+    max-width: 50px;
+    height: 50px;
+  }
+
+  .company-info {
+    margin-top: 20px;
+  }
+
+  .line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--gray-400);
+  }
+}
